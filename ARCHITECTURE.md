@@ -14,15 +14,21 @@ pipeline_dish/
 │   │
 │   ├── signals/
 │   │   ├── line_movement.py      # ★ CORE ENGINE — sharp money signal detection
-│   │   └── live_signals.py       # Live odds fetcher (scaffolded, not active)
+│   │   │                         #   ALLOWED_SIDES = {"A"} (Away-only, S6 config)
+│   │   │                         #   Tự filter theo TARGET_LEAGUES từ .env
+│   │   ├── odds_poller.py        # ★ LIVE POLLER — poll The Odds API mỗi 60 phút
+│   │   │                         #   Dùng BankrollState (Drawdown Guard) để size stake
+│   │   ├── bet_settler.py        # ★ SETTLER — settle bets + tính CLV sau trận
+│   │   ├── live_signals.py       # Fetch live odds từ The Odds API
+│   │   └── telegram_alert.py     # Telegram alerts (cần config BOT_TOKEN)
 │   │
 │   ├── betting/
-│   │   ├── kelly.py              # Kelly criterion + BankrollManager (used by old ML pipeline)
-│   │   ├── backtest.py           # Walk-forward backtest for ML model (deprecated)
-│   │   └── backtest_kelly_lm.py  # ★ Kelly sizing for line movement signals
+│   │   ├── backtest_kelly_lm.py  # ★ Kelly sizing cho line movement backtest
+│   │   ├── kelly.py              # Kelly criterion cũ (dùng bởi deprecated ML pipeline)
+│   │   └── backtest.py           # Walk-forward backtest ML (deprecated)
 │   │
 │   ├── features/
-│   │   └── features.py           # Rolling stats, Elo, H2H (used by deprecated ML pipeline)
+│   │   └── features.py           # Rolling stats, Elo, H2H (deprecated — ML only)
 │   │
 │   ├── models/
 │   │   └── trainer.py            # XGBoost + LightGBM ensemble (deprecated)
@@ -33,72 +39,84 @@ pipeline_dish/
 ├── data/
 │   ├── pipeline.db               # SQLite database (main data store)
 │   ├── processed/
-│   │   ├── kelly_lm_results.csv  # Output of Kelly backtest
-│   │   └── backtest_results.csv  # Output of old ML backtest
+│   │   ├── kelly_lm_results.csv      # Output of Kelly backtest
+│   │   ├── bootstrap_ci_results.json # Bootstrap CI kết quả mới nhất
+│   │   └── strategy_comparison.json  # 7-scenario comparison từ optimize_strategy.py
 │   └── raw/                      # Raw CSV downloads (cache)
 │
 ├── models/
-│   ├── saved/                    # Trained XGB + LGB + meta models (.pkl)
-│   └── calibrated/               # Isotonic-calibrated probability models (.pkl)
+│   ├── saved/                    # Trained XGB + LGB models (deprecated)
+│   └── calibrated/               # Calibrated models (deprecated)
 │
 ├── logs/                         # Loguru rotating log files
+│   ├── odds_poller.log           # Live poller activity
+│   ├── bet_settler.log           # Settlement activity
+│   ├── bootstrap_ci.log
+│   └── ...
 │
-├── OVERVIEW.md                   # ← You came from here
+├── OVERVIEW.md                   # Project overview + current status
 ├── ARCHITECTURE.md               # ← This file
 ├── WORKFLOW.md                   # How to run everything
 │
 ├── run_backtest_lm.py            # Quick flat-unit backtest (line movement)
 ├── run_kelly_lm.py               # Full Kelly bankroll simulation
-├── test_by_season.py             # Consistency check — ROI per season
-├── test_thresholds.py            # Sweep movement thresholds 1%→5%
-├── test_no_home.py               # Side analysis (H vs D vs A)
-├── diagnose_2425.py              # Deep-dive on any problem season
-├── update_closing_odds.py        # Backfill closing odds for existing DB rows
+├── run_poller.py                 # ★ Live odds poller entry point
+├── run_settler.py                # ★ Bet settler entry point
+├── bootstrap_ci.py               # Bootstrap CI — xác nhận edge
+├── optimize_strategy.py          # ★ 7-scenario CI comparison — tìm config tốt nhất
+├── drawdown_guard.py             # ★ Drawdown-aware Kelly sizing (BankrollState)
+├── clv_tracker.py                # CLV tracking — đánh giá execution quality
+├── test_by_season.py             # ROI per season consistency check
+├── test_thresholds.py            # Sweep movement thresholds
+├── test_no_home.py               # Side analysis (deprecated — đã loại Home)
+├── diagnose_2425.py              # Deep-dive season diagnosis
+├── validate_edge.py              # Opening vs closing odds ROI comparison
+├── update_closing_odds.py        # Backfill closing odds
 ├── migrate_closing_odds.py       # One-time DB column migration
-└── run_pipeline.py               # Legacy ML pipeline runner
+├── check_db.py                   # Quick DB state check (snapshots, live bets)
+└── run_pipeline.py               # Legacy ML pipeline (deprecated)
 ```
 
 ---
 
 ## Database Schema
 
-All tables are in `data/pipeline.db` (SQLite).
-
-### `matches` — Primary data table
+### `matches` — Historical data (3430 rows: EPL + BL, 2020-21 → 2024-25)
 
 ```
-id            INTEGER  PK
-league        TEXT     e.g. "soccer_epl"
-season        TEXT     e.g. "2024-25"
-date          DATETIME
-home_team     TEXT
-away_team     TEXT
-home_goals    INTEGER
-away_goals    INTEGER
-result        TEXT     "H" / "D" / "A"
-
-odds_h        REAL     Bet365 opening odds — Home
-odds_d        REAL     Bet365 opening odds — Draw
-odds_a        REAL     Bet365 opening odds — Away
-
-close_h       REAL     Bet365 closing odds — Home  ← added by migration
-close_d       REAL     Bet365 closing odds — Draw
-close_a       REAL     Bet365 closing odds — Away
-
-home_shots         INTEGER
-away_shots         INTEGER
-home_shots_target  INTEGER
-away_shots_target  INTEGER
-home_corners       INTEGER
-away_corners       INTEGER
+id, league, season, date, home_team, away_team
+home_goals, away_goals, result          -- H / D / A
+odds_h, odds_d, odds_a                  -- Bet365 opening odds
+close_h, close_d, close_a              -- Bet365 closing odds ← key for signal
+pin_h/d/a, pin_close_h/d/a             -- Pinnacle odds (columns exist, not populated)
+home/away_shots, corners, etc.         -- Match stats
 ```
 
-### Other tables (used by deprecated ML pipeline)
+### `odds_snapshots` — Live poll history
 
-- `match_features` — Pre-computed rolling stats, Elo, H2H per match
-- `predictions` — Model output: prob_home/draw/away, EV, Kelly
-- `betting_records` — Historical bet ledger with P&L
-- `live_odds` — Snapshot of live odds from The Odds API
+```
+match_key       -- "Arsenal__Chelsea__2026-05-10" (unique per match)
+league, home_team, away_team, match_date
+snapshot_at     -- khi nào poll
+odds_h/d/a      -- odds tại thời điểm poll
+is_baseline     -- True = snapshot đầu tiên (baseline để đo movement)
+```
+
+**Current state (2026-05-04):** 11 baselines cho GW 9-10 May, 0 non-baseline.
+
+### `live_bets` — Paper trading ledger
+
+```
+match_key, league, home_team, away_team, match_date
+signal_side, movement, baseline_odds, bet_odds
+stake, bankroll_before
+-- Điền sau settle:
+result, won, profit, bankroll_after
+close_odds, clv          -- CLV = close_implied_prob - bet_implied_prob
+settled, is_paper        -- is_paper=True trong paper trading phase
+```
+
+**Current state (2026-05-04):** 0 live bets — chờ signal fire.
 
 ---
 
@@ -106,75 +124,71 @@ away_corners       INTEGER
 
 **File:** `src/signals/line_movement.py`
 
-### Step 1 — Remove vig from both opening and closing odds
+### Step 1 — Load matches (filter theo TARGET_LEAGUES)
+
+```python
+# Tự đọc TARGET_LEAGUES từ .env — chỉ load EPL
+q = q.filter(Match.league.in_(TARGET_LEAGUES))
+```
+
+### Step 2 — Remove vig
 
 ```python
 def remove_vig(h, d, a):
     ih, id_, ia = 1/h, 1/d, 1/a
     total = ih + id_ + ia
-    return ih/total, id_/total, ia/total  # true probabilities
+    return ih/total, id_/total, ia/total
 ```
 
-### Step 2 — Compute movement per outcome
+### Step 3 — Compute movement
 
 ```
 movement = close_implied_prob - open_implied_prob
 ```
 
-Positive movement = market thinks this outcome is MORE likely at close than open = sharp money moved it.
-
-### Step 3 — Apply filters
+### Step 4 — Apply filters (S6 config)
 
 ```python
-MOVEMENT_THRESHOLD = 0.03    # ≥3% shift required
-MIN_CLOSE_PROB     = 0.20    # ignore extreme longshots
-MAX_CLOSE_PROB     = 0.80    # ignore near-certainties
-MIN_OPEN_ODDS      = 1.30    # minimum opening price
-ALLOWED_SIDES      = {"D", "A"}  # Home excluded — empirically unstable
+MOVEMENT_THRESHOLD = 0.03
+MIN_CLOSE_PROB     = 0.20
+MAX_CLOSE_PROB     = 0.80
+MIN_OPEN_ODDS      = 1.30
+ALLOWED_SIDES      = {"A"}   # Away-only (S6)
 ```
 
-### Step 4 — Select strongest signal per match
-
-If multiple sides pass the filter, take the one with highest movement.
-
-### Step 5 — Kelly stake sizing
+### Step 5 — Kelly stake via Drawdown Guard
 
 ```python
-f_full = (b * close_prob - (1 - close_prob)) / b   # full Kelly
-f_frac = f_full * 0.25                              # quarter Kelly
-stake  = min(f_frac, 0.03) * bankroll              # hard cap 3%
+guard = get_guard_state(session)          # reconstruct từ DB history
+stake, debug = guard.kelly_stake(close_prob, open_odds)
+# quarter Kelly * smooth_scale * tier_mult * streak_mult, cap 3%
 ```
-
-`close_prob` is used as the "true probability" estimate because closing odds represent the sharpest available market consensus.
 
 ---
 
-## Config Constants
+## Config Constants (S6 Active)
 
-All tunable parameters live in `src/config.py` and `src/signals/line_movement.py`:
-
-| Constant | Value | Location | Meaning |
-|----------|-------|----------|---------|
-| `MOVEMENT_THRESHOLD` | 0.03 | line_movement.py | Min prob shift to trigger signal |
-| `ALLOWED_SIDES` | {D, A} | line_movement.py | Home excluded |
-| `MIN_CLOSE_PROB` | 0.20 | line_movement.py | Filter extreme odds |
-| `MAX_CLOSE_PROB` | 0.80 | line_movement.py | Filter near-certainties |
-| `KELLY_FRACTION` | 0.25 | backtest_kelly_lm.py | Fractional Kelly multiplier |
-| `MAX_BET_PCT` | 0.03 | backtest_kelly_lm.py | Hard cap per bet (3% bankroll) |
-| `MIN_BET_PCT` | 0.005 | backtest_kelly_lm.py | Ignore tiny Kelly bets |
-| `INITIAL_BANKROLL` | 1000 | backtest_kelly_lm.py | Starting bankroll for simulation |
+| Constant | Value | File |
+|----------|-------|------|
+| `TARGET_LEAGUES` | `soccer_epl` | `.env` |
+| `ALLOWED_SIDES` | `A` | `.env` → `line_movement.py` |
+| `MOVEMENT_THRESHOLD` | `0.03` | `line_movement.py` |
+| `KELLY_FRACTION` | `0.25` | `backtest_kelly_lm.py` |
+| `MAX_BET_PCT` | `0.03` | `config.py` |
+| `DRAWDOWN_EXPONENT` | `2.0` | `drawdown_guard.py` |
+| `STOP_LOSS_STREAK` | `4` | `drawdown_guard.py` |
+| `POLL_INTERVAL_MINUTES` | `60` | `config.py` |
 
 ---
 
 ## Deprecated Components
 
-These exist in the codebase but are **not part of the active strategy**:
+| File | Status | Why |
+|------|--------|-----|
+| `src/models/trainer.py` | Deprecated | ML ROI âm sau Kelly sizing |
+| `src/betting/backtest.py` | Deprecated | ML backtest — bankroll → near zero |
+| `src/features/features.py` | Deprecated | Features cho ML đã bỏ |
+| `models/saved/*.pkl` | Deprecated | Trained model artifacts |
+| `test_no_home.py` | Superseded | Đã loại Home, dùng optimize_strategy.py thay |
 
-| File | Status | Why deprecated |
-|------|--------|----------------|
-| `src/models/trainer.py` | Deprecated | ML model ROI was negative after Kelly sizing |
-| `src/betting/backtest.py` | Deprecated | ML pipeline backtest — bankroll went to near zero |
-| `src/features/features.py` | Deprecated | Features computed for ML model only |
-| `models/saved/*.pkl` | Deprecated | Trained model artifacts, kept for reference |
-
-The active strategy requires **no ML models** — only odds data.
+Active strategy **không cần ML** — chỉ cần odds data.
