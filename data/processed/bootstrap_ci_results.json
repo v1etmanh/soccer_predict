@@ -1,0 +1,104 @@
+{
+  "overall": {
+    "observed_roi": 0.2044,
+    "n_bets": 179,
+    "n_bootstrap": 10000,
+    "ci_level": 0.95,
+    "ci_lower": 0.0014,
+    "ci_upper": 0.4103,
+    "mean_boot_roi": 0.2047,
+    "std_boot_roi": 0.1051,
+    "p_value_zero": 0.0245,
+    "significant": true
+  },
+  "by_league": {
+    "soccer_epl": {
+      "observed_roi": 0.2044,
+      "n_bets": 179,
+      "n_bootstrap": 5000,
+      "ci_level": 0.95,
+      "ci_lower": 0.0001,
+      "ci_upper": 0.4114,
+      "mean_boot_roi": 0.2045,
+      "std_boot_roi": 0.1058,
+      "p_value_zero": 0.025,
+      "significant": true
+    }
+  },
+  "by_season": {
+    "2020-21": {
+      "observed_roi": 0.36,
+      "n_bets": 54,
+      "n_bootstrap": 5000,
+      "ci_level": 0.95,
+      "ci_lower": -0.0408,
+      "ci_upper": 0.7932,
+      "mean_boot_roi": 0.3629,
+      "std_boot_roi": 0.2132,
+      "p_value_zero": 0.0412,
+      "significant": false
+    },
+    "2021-22": {
+      "observed_roi": -0.3767,
+      "n_bets": 27,
+      "n_bootstrap": 5000,
+      "ci_level": 0.95,
+      "ci_lower": -0.7167,
+      "ci_upper": -0.0044,
+      "mean_boot_roi": -0.3789,
+      "std_boot_roi": 0.1856,
+      "p_value_zero": 0.9774,
+      "significant": false
+    },
+    "2022-23": {
+      "observed_roi": 0.2019,
+      "n_bets": 32,
+      "n_bootstrap": 5000,
+      "ci_level": 0.95,
+      "ci_lower": -0.2681,
+      "ci_upper": 0.731,
+      "mean_boot_roi": 0.2026,
+      "std_boot_roi": 0.2548,
+      "p_value_zero": 0.214,
+      "significant": false
+    },
+    "2023-24": {
+      "observed_roi": 0.4419,
+      "n_bets": 32,
+      "n_bootstrap": 5000,
+      "ci_level": 0.95,
+      "ci_lower": -0.0284,
+      "ci_upper": 0.9503,
+      "mean_boot_roi": 0.4368,
+      "std_boot_roi": 0.2505,
+      "p_value_zero": 0.034,
+      "significant": false
+    },
+    "2024-25": {
+      "observed_roi": 0.1976,
+      "n_bets": 34,
+      "n_bootstrap": 5000,
+      "ci_level": 0.95,
+      "ci_lower": -0.2168,
+      "ci_upper": 0.64,
+      "mean_boot_roi": 0.1945,
+      "std_boot_roi": 0.2158,
+      "p_value_zero": 0.1806,
+      "significant": false
+    }
+  },
+  "by_side": {
+    "A": {
+      "observed_roi": 0.2044,
+      "n_bets": 179,
+      "n_bootstrap": 5000,
+      "ci_level": 0.95,
+      "ci_lower": 0.0001,
+      "ci_upper": 0.4114,
+      "mean_boot_roi": 0.2045,
+      "std_boot_roi": 0.1058,
+      "p_value_zero": 0.025,
+      "significant": true
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "S1: Baseline": {
+    "n_bets": 332,
+    "observed_roi": 0.1242,
+    "ci_lower": -0.0363,
+    "ci_upper": 0.2804,
+    "p_zero": 0.0619,
+    "significant": false,
+    "ci_width": 0.3167,
+    "desc": "threshold=3%, EPL+BL, sides=D+A"
+  },
+  "S2: EPL-only": {
+    "n_bets": 191,
+    "observed_roi": 0.1756,
+    "ci_lower": -0.0267,
+    "ci_upper": 0.3812,
+    "p_zero": 0.043,
+    "significant": false,
+    "ci_width": 0.4079,
+    "desc": "threshold=3%, EPL only, sides=D+A"
+  },
+  "S3: Threshold 4%": {
+    "n_bets": 183,
+    "observed_roi": 0.1367,
+    "ci_lower": -0.0678,
+    "ci_upper": 0.3486,
+    "p_zero": 0.0966,
+    "significant": false,
+    "ci_width": 0.4163,
+    "desc": "threshold=4%, EPL+BL, sides=D+A"
+  },
+  "S4: EPL + Threshold 4%": {
+    "n_bets": 105,
+    "observed_roi": 0.2145,
+    "ci_lower": -0.0587,
+    "ci_upper": 0.4953,
+    "p_zero": 0.0649,
+    "significant": false,
+    "ci_width": 0.554,
+    "desc": "threshold=4%, EPL only, sides=D+A"
+  },
+  "S5: Away-only": {
+    "n_bets": 312,
+    "observed_roi": 0.088,
+    "ci_lower": -0.0654,
+    "ci_upper": 0.2415,
+    "p_zero": 0.1337,
+    "significant": false,
+    "ci_width": 0.3069,
+    "desc": "threshold=3%, EPL+BL, side=A only"
+  },
+  "S6: EPL + Away-only": {
+    "n_bets": 179,
+    "observed_roi": 0.2044,
+    "ci_lower": 0.0014,
+    "ci_upper": 0.4103,
+    "p_zero": 0.0245,
+    "significant": true,
+    "ci_width": 0.4089,
+    "desc": "threshold=3%, EPL only, side=A only"
+  },
+  "S7: EPL + Away + 4%": {
+    "n_bets": 98,
+    "observed_roi": 0.2073,
+    "ci_lower": -0.0708,
+    "ci_upper": 0.4891,
+    "p_zero": 0.0694,
+    "significant": false,
+    "ci_width": 0.5599,
+    "desc": "threshold=4%, EPL only, side=A only"
+  }
+}

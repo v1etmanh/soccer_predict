@@ -1,0 +1,23 @@
+2026-05-03 22:37:22.981 | INFO     | __main__:run_training_pipeline:143 - [Trainer] Train size: 2744 | Cal size: 686
+2026-05-03 22:37:22.986 | INFO     | __main__:run_training_pipeline:146 - [Trainer] Computing OOF for XGBoost...
+2026-05-03 22:37:24.597 | DEBUG    | __main__:get_oof_predictions:46 - [Trainer] Fold 1/5 done
+2026-05-03 22:37:25.847 | DEBUG    | __main__:get_oof_predictions:46 - [Trainer] Fold 2/5 done
+2026-05-03 22:37:27.148 | DEBUG    | __main__:get_oof_predictions:46 - [Trainer] Fold 3/5 done
+2026-05-03 22:37:28.634 | DEBUG    | __main__:get_oof_predictions:46 - [Trainer] Fold 4/5 done
+2026-05-03 22:37:30.257 | DEBUG    | __main__:get_oof_predictions:46 - [Trainer] Fold 5/5 done
+2026-05-03 22:37:30.261 | INFO     | __main__:run_training_pipeline:149 - [Trainer] Computing OOF for LightGBM...
+2026-05-03 22:37:30.874 | DEBUG    | __main__:get_oof_predictions:46 - [Trainer] Fold 1/5 done
+2026-05-03 22:37:31.644 | DEBUG    | __main__:get_oof_predictions:46 - [Trainer] Fold 2/5 done
+2026-05-03 22:37:32.689 | DEBUG    | __main__:get_oof_predictions:46 - [Trainer] Fold 3/5 done
+2026-05-03 22:37:33.591 | DEBUG    | __main__:get_oof_predictions:46 - [Trainer] Fold 4/5 done
+2026-05-03 22:37:34.502 | DEBUG    | __main__:get_oof_predictions:46 - [Trainer] Fold 5/5 done
+2026-05-03 22:37:34.504 | INFO     | __main__:train_base_models:24 - [Trainer] Training XGBoost...
+2026-05-03 22:37:35.769 | INFO     | __main__:train_base_models:28 - [Trainer] Training LightGBM...
+2026-05-03 22:37:36.676 | INFO     | __main__:train_meta_model:56 - [Trainer] Meta model trained
+2026-05-03 22:37:36.706 | INFO     | __main__:run_training_pipeline:162 - [Trainer] Before calibration: {'brier_Home': 0.2236, 'brier_Draw': 0.1865, 'brier_Away': 0.2156, 'log_loss': 1.0401}
+2026-05-03 22:37:36.760 | INFO     | __main__:run_training_pipeline:171 - [Trainer] After calibration:  {'brier_Home': 0.2164, 'brier_Draw': 0.186, 'brier_Away': 0.2103, 'log_loss': 1.0221}
+2026-05-03 22:37:36.794 | INFO     | __main__:save_models:109 - [Trainer] Saved D:\dream_project\pipeline_dish\models\saved\xgb_all.pkl
+2026-05-03 22:37:36.875 | INFO     | __main__:save_models:109 - [Trainer] Saved D:\dream_project\pipeline_dish\models\saved\lgb_all.pkl
+2026-05-03 22:37:36.875 | INFO     | __main__:save_models:109 - [Trainer] Saved D:\dream_project\pipeline_dish\models\saved\meta_all.pkl
+2026-05-03 22:37:37.001 | INFO     | __main__:save_models:114 - [Trainer] Saved calibrated model → D:\dream_project\pipeline_dish\models\calibrated\calibrated_all.pkl
+2026-05-03 22:37:37.003 | SUCCESS  | __main__:run_training_pipeline:175 - [Trainer] Pipeline hoàn thành cho league=all

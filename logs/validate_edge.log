@@ -1,0 +1,6 @@
+2026-05-03 23:46:14.050 | INFO     | signals.line_movement_v2:load_matches_with_movement:209 - [LM v2] Loaded 3430 matches | Signals: 332 | bookmaker=bet365 | execution=historical | pinnacle_available=True
+2026-05-03 23:46:14.073 | SUCCESS  | signals.line_movement_v2:backtest_flat:249 - [Backtest] 332 bets | Win: 43.7% | ROI: 12.42% | Profit: 41.23u
+2026-05-03 23:46:14.221 | INFO     | signals.line_movement_v2:load_matches_with_movement:209 - [LM v2] Loaded 3430 matches | Signals: 332 | bookmaker=bet365 | execution=realistic | pinnacle_available=True
+2026-05-03 23:46:14.221 | SUCCESS  | signals.line_movement_v2:backtest_flat:249 - [Backtest] 332 bets | Win: 43.7% | ROI: -1.70% | Profit: -5.66u
+2026-05-03 23:46:14.410 | INFO     | signals.line_movement_v2:load_matches_with_movement:209 - [LM v2] Loaded 3430 matches | Signals: 332 | bookmaker=bet365 | execution=realistic | pinnacle_available=True
+2026-05-03 23:46:14.588 | INFO     | signals.line_movement_v2:load_matches_with_movement:209 - [LM v2] Loaded 3430 matches | Signals: 332 | bookmaker=bet365 | execution=historical | pinnacle_available=True

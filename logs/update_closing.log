@@ -1,0 +1,11 @@
+2026-05-03 22:56:50.299 | INFO     | __main__:run:79 - [Update] soccer_epl 2021: 380 trận updated
+2026-05-03 22:56:51.631 | INFO     | __main__:run:79 - [Update] soccer_epl 2122: 380 trận updated
+2026-05-03 22:56:52.994 | INFO     | __main__:run:79 - [Update] soccer_epl 2223: 380 trận updated
+2026-05-03 22:56:54.320 | INFO     | __main__:run:79 - [Update] soccer_epl 2324: 380 trận updated
+2026-05-03 22:56:55.701 | INFO     | __main__:run:79 - [Update] soccer_epl 2425: 380 trận updated
+2026-05-03 22:56:57.460 | INFO     | __main__:run:79 - [Update] soccer_germany_bundesliga 2021: 306 trận updated
+2026-05-03 22:56:59.702 | INFO     | __main__:run:79 - [Update] soccer_germany_bundesliga 2122: 306 trận updated
+2026-05-03 22:57:04.467 | INFO     | __main__:run:79 - [Update] soccer_germany_bundesliga 2223: 306 trận updated
+2026-05-03 22:57:05.712 | INFO     | __main__:run:79 - [Update] soccer_germany_bundesliga 2324: 306 trận updated
+2026-05-03 22:57:08.323 | INFO     | __main__:run:79 - [Update] soccer_germany_bundesliga 2425: 306 trận updated
+2026-05-03 22:57:08.323 | SUCCESS  | __main__:run:82 - [Update] Hoàn thành. 3430 trận có closing odds mới.

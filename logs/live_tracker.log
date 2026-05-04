@@ -1,0 +1,13 @@
+2026-05-03 23:18:07.253 | INFO     | __main__:fetch_odds:55 - [Tracker] soccer_epl: 14 events fetched
+2026-05-03 23:18:07.263 | INFO     | __main__:run_once:248 - [Tracker] Opening snapshot: Aston Villa vs Tottenham Hotspur | H:2.13 D:3.68 A:3.3
+2026-05-03 23:18:07.263 | INFO     | __main__:run_once:248 - [Tracker] Opening snapshot: Chelsea vs Nottingham Forest | H:1.67 D:4.2 A:4.8
+2026-05-03 23:18:07.264 | INFO     | __main__:run_once:248 - [Tracker] Opening snapshot: Everton vs Manchester City | H:6.25 D:4.8 A:1.47
+2026-05-03 23:18:07.700 | INFO     | __main__:fetch_odds:55 - [Tracker] soccer_germany_bundesliga: 11 events fetched
+2026-05-03 23:18:07.707 | INFO     | __main__:run_once:248 - [Tracker] Opening snapshot: SC Freiburg vs VfL Wolfsburg | H:2.45 D:3.55 A:2.765
+2026-05-03 23:18:07.708 | INFO     | __main__:run_once:275 - [Tracker] Tracking 4 upcoming matches | 0 new signals
+2026-05-03 23:19:34.016 | INFO     | __main__:fetch_odds:55 - [Tracker] soccer_epl: 14 events fetched
+2026-05-03 23:19:35.213 | INFO     | __main__:fetch_odds:55 - [Tracker] soccer_germany_bundesliga: 11 events fetched
+2026-05-03 23:19:35.213 | INFO     | __main__:run_once:275 - [Tracker] Tracking 4 upcoming matches | 0 new signals
+2026-05-03 23:21:06.952 | INFO     | __main__:fetch_odds:55 - [Tracker] soccer_epl: 14 events fetched
+2026-05-03 23:21:08.357 | INFO     | __main__:fetch_odds:55 - [Tracker] soccer_germany_bundesliga: 11 events fetched
+2026-05-03 23:21:08.359 | INFO     | __main__:run_once:275 - [Tracker] Tracking 4 upcoming matches | 0 new signals

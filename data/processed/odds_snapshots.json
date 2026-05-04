@@ -1,0 +1,46 @@
+{
+  "82a45989e8b145f27fbd7932180e1121": {
+    "event_id": "82a45989e8b145f27fbd7932180e1121",
+    "league": "soccer_epl",
+    "home_team": "Aston Villa",
+    "away_team": "Tottenham Hotspur",
+    "commence": "2026-05-03T18:00:00+00:00",
+    "odds_h": 2.13,
+    "odds_d": 3.68,
+    "odds_a": 3.3,
+    "fetched_at": "2026-05-03T16:18:07.263450+00:00"
+  },
+  "699bf1a1a9eb1b2ed120fea0c2225ddf": {
+    "event_id": "699bf1a1a9eb1b2ed120fea0c2225ddf",
+    "league": "soccer_epl",
+    "home_team": "Chelsea",
+    "away_team": "Nottingham Forest",
+    "commence": "2026-05-04T14:00:00+00:00",
+    "odds_h": 1.67,
+    "odds_d": 4.2,
+    "odds_a": 4.8,
+    "fetched_at": "2026-05-03T16:18:07.263843+00:00"
+  },
+  "09d5570dec06194bdd8124831b9deb5a": {
+    "event_id": "09d5570dec06194bdd8124831b9deb5a",
+    "league": "soccer_epl",
+    "home_team": "Everton",
+    "away_team": "Manchester City",
+    "commence": "2026-05-04T19:00:00+00:00",
+    "odds_h": 6.25,
+    "odds_d": 4.8,
+    "odds_a": 1.47,
+    "fetched_at": "2026-05-03T16:18:07.264109+00:00"
+  },
+  "4ad2ab499ea6b0d3e3c5c0a2e015466d": {
+    "event_id": "4ad2ab499ea6b0d3e3c5c0a2e015466d",
+    "league": "soccer_germany_bundesliga",
+    "home_team": "SC Freiburg",
+    "away_team": "VfL Wolfsburg",
+    "commence": "2026-05-03T17:30:00+00:00",
+    "odds_h": 2.45,
+    "odds_d": 3.55,
+    "odds_a": 2.765,
+    "fetched_at": "2026-05-03T16:18:07.706989+00:00"
+  }
+}

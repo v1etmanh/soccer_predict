@@ -1,0 +1,140 @@
+date,season,league,home_team,away_team,side,open_odds,close_prob,stake,won,profit,bankroll
+2020-09-13,2020-21,soccer_epl,Tottenham,Everton,A,4.33,0.2489,5.84,True,19.45,1019.45
+2020-09-20,2020-21,soccer_epl,Chelsea,Liverpool,A,2.2,0.476,10.0,True,12.0,1031.45
+2020-10-03,2020-21,soccer_epl,Leeds,Man City,A,1.36,0.7559,20.08,False,-20.08,1011.37
+2020-10-04,2020-21,soccer_epl,Leicester,West Ham,A,5.25,0.2247,10.7,True,45.47,1056.84
+2020-10-04,2020-21,soccer_epl,Southampton,West Brom,A,4.75,0.2365,8.68,False,-8.68,1048.16
+2020-10-18,2020-21,soccer_epl,Crystal Palace,Brighton,A,2.7,0.3939,9.81,False,-9.81,1038.35
+2020-10-18,2020-21,soccer_epl,Leicester,Aston Villa,A,4.1,0.3313,30.0,True,93.0,1131.35
+2020-10-25,2020-21,soccer_epl,Southampton,Everton,A,2.55,0.4211,13.45,False,-13.45,1117.9
+2020-11-07,2020-21,soccer_epl,Everton,Man United,A,2.37,0.4427,10.05,True,13.77,1131.67
+2020-11-22,2020-21,soccer_epl,Leeds,Arsenal,A,2.2,0.4729,9.53,False,-9.53,1122.14
+2020-11-28,2020-21,soccer_epl,Everton,Leeds,A,3.6,0.3161,14.88,True,38.69,1160.83
+2020-12-06,2020-21,soccer_epl,Tottenham,Arsenal,A,3.8,0.2815,7.21,False,-7.21,1153.62
+2020-12-12,2020-21,soccer_epl,Wolves,Aston Villa,A,3.25,0.3299,9.26,True,20.84,1174.46
+2020-12-19,2020-21,soccer_epl,Newcastle,Fulham,A,2.9,0.3804,15.95,False,-15.95,1158.51
+2020-12-20,2020-21,soccer_epl,West Brom,Aston Villa,A,1.95,0.5518,23.18,True,22.02,1180.53
+2020-12-26,2020-21,soccer_epl,Arsenal,Chelsea,A,1.9,0.551,15.41,False,-15.41,1165.12
+2020-12-28,2020-21,soccer_epl,Chelsea,Aston Villa,A,5.0,0.2195,7.08,False,-7.08,1158.04
+2020-12-29,2020-21,soccer_epl,West Brom,Leeds,A,2.0,0.5263,15.24,True,15.24,1173.28
+2021-01-04,2020-21,soccer_epl,Southampton,Liverpool,A,1.61,0.6343,10.17,False,-10.17,1163.11
+2021-01-26,2020-21,soccer_epl,Crystal Palace,West Ham,A,2.37,0.4413,9.76,True,13.37,1176.48
+2021-01-28,2020-21,soccer_epl,Tottenham,Liverpool,A,2.2,0.4898,19.01,True,22.81,1199.29
+2021-01-30,2020-21,soccer_epl,Arsenal,Man United,A,2.45,0.464,28.29,False,-28.29,1171.0
+2021-01-30,2020-21,soccer_epl,Southampton,Aston Villa,A,2.37,0.4497,14.05,True,19.25,1190.25
+2021-02-06,2020-21,soccer_epl,Aston Villa,Arsenal,A,2.6,0.3995,7.21,False,-7.21,1183.04
+2021-02-06,2020-21,soccer_epl,Newcastle,Southampton,A,2.4,0.4357,9.64,False,-9.64,1173.4
+2021-02-06,2020-21,soccer_epl,Fulham,West Ham,A,2.05,0.5113,13.45,False,-13.45,1159.95
+2021-02-13,2020-21,soccer_epl,Crystal Palace,Burnley,A,3.2,0.3527,16.96,True,37.31,1197.26
+2021-02-15,2020-21,soccer_epl,West Ham,Sheffield United,A,5.25,0.2374,17.35,False,-17.35,1179.91
+2021-02-21,2020-21,soccer_epl,West Ham,Tottenham,A,2.7,0.3947,11.41,False,-11.41,1168.5
+2021-02-21,2020-21,soccer_epl,Aston Villa,Leicester,A,2.4,0.4868,35.05,True,49.07,1217.57
+2021-03-08,2020-21,soccer_epl,West Ham,Leeds,A,3.5,0.3158,12.82,False,-12.82,1204.75
+2021-03-21,2020-21,soccer_epl,West Ham,Arsenal,A,2.45,0.4545,23.6,False,-23.6,1181.15
+2021-04-04,2020-21,soccer_epl,Aston Villa,Fulham,A,3.3,0.3254,9.5,False,-9.5,1171.65
+2021-04-24,2020-21,soccer_epl,Sheffield United,Brighton,A,1.75,0.6045,22.63,False,-22.63,1149.02
+2021-04-25,2020-21,soccer_epl,Wolves,Burnley,A,3.9,0.2797,9.0,True,26.1,1175.12
+2021-04-25,2020-21,soccer_epl,Aston Villa,West Brom,A,4.2,0.2642,10.07,False,-10.07,1165.05
+2021-05-08,2020-21,soccer_epl,Leeds,Tottenham,A,2.0,0.519,11.08,False,-11.08,1153.97
+2021-05-09,2020-21,soccer_epl,Wolves,Brighton,A,2.2,0.4748,10.72,False,-10.72,1143.25
+2021-05-11,2020-21,soccer_epl,Man United,Leicester,A,2.8,0.464,34.3,True,61.74,1204.99
+2021-05-12,2020-21,soccer_epl,Chelsea,Arsenal,A,5.0,0.2249,9.39,True,37.56,1242.55
+2021-05-15,2020-21,soccer_epl,Brighton,West Ham,A,2.3,0.4603,14.04,False,-14.04,1228.51
+2021-05-23,2020-21,soccer_epl,Fulham,Newcastle,A,3.3,0.3267,10.41,True,23.94,1252.45
+2021-09-25,2021-22,soccer_epl,Chelsea,Man City,A,2.75,0.3783,7.22,True,12.63,1265.08
+2021-12-10,2021-22,soccer_epl,Brentford,Watford,A,3.3,0.3288,11.71,False,-11.71,1253.37
+2021-12-11,2021-22,soccer_epl,Arsenal,Southampton,A,5.5,0.2096,10.63,False,-10.63,1242.74
+2021-12-18,2021-22,soccer_epl,Leeds,Arsenal,A,1.83,0.6018,37.28,True,30.94,1273.68
+2022-01-22,2021-22,soccer_epl,Man United,West Ham,A,4.0,0.2718,9.24,False,-9.24,1264.44
+2022-02-09,2021-22,soccer_epl,Aston Villa,Leeds,A,4.2,0.2636,10.58,False,-10.58,1253.86
+2022-02-12,2021-22,soccer_epl,Brentford,Crystal Palace,A,3.0,0.3788,21.39,False,-21.39,1232.47
+2022-02-12,2021-22,soccer_epl,Everton,Leeds,A,3.0,0.3647,14.51,False,-14.51,1217.96
+2022-02-20,2021-22,soccer_epl,Leeds,Man United,A,1.85,0.5732,21.62,True,18.38,1236.34
+2022-03-05,2021-22,soccer_epl,Leicester,Leeds,A,4.2,0.2662,11.42,False,-11.42,1224.92
+2022-03-13,2021-22,soccer_epl,West Ham,Aston Villa,A,3.3,0.3239,9.18,False,-9.18,1215.74
+2022-04-10,2021-22,soccer_epl,Norwich,Burnley,A,2.55,0.4126,10.21,False,-10.21,1205.53
+2022-04-20,2021-22,soccer_epl,Everton,Leicester,A,3.25,0.3501,18.44,False,-18.44,1187.09
+2022-04-23,2021-22,soccer_epl,Brentford,Tottenham,A,1.85,0.5539,8.65,False,-8.65,1178.44
+2022-04-25,2021-22,soccer_epl,Crystal Palace,Leeds,A,3.5,0.3276,17.29,False,-17.29,1161.15
+2022-04-28,2021-22,soccer_epl,Man United,Chelsea,A,2.25,0.464,10.22,False,-10.22,1150.93
+2022-05-11,2021-22,soccer_epl,Watford,Everton,A,1.83,0.5747,17.93,False,-17.93,1133.0
+2022-05-15,2021-22,soccer_epl,Watford,Leicester,A,1.95,0.5839,33.99,True,32.29,1165.29
+2022-05-22,2021-22,soccer_epl,Brighton,West Ham,A,2.9,0.3599,6.72,False,-6.72,1158.57
+2022-08-07,2022-23,soccer_epl,Man United,Brighton,A,5.25,0.2193,10.31,True,43.82,1202.39
+2022-08-13,2022-23,soccer_epl,Southampton,Leeds,A,3.1,0.3371,6.43,False,-6.43,1195.96
+2022-08-13,2022-23,soccer_epl,Brentford,Man United,A,2.0,0.5389,23.27,False,-23.27,1172.69
+2022-08-21,2022-23,soccer_epl,West Ham,Brighton,A,3.1,0.3397,7.42,True,15.58,1188.27
+2022-10-10,2022-23,soccer_epl,Nott'm Forest,Aston Villa,A,2.2,0.4737,10.42,False,-10.42,1177.85
+2022-12-26,2022-23,soccer_epl,Crystal Palace,Fulham,A,3.5,0.3058,8.28,True,20.7,1198.55
+2022-12-31,2022-23,soccer_epl,Brighton,Arsenal,A,2.1,0.5171,23.41,True,25.75,1224.3
+2023-01-04,2022-23,soccer_epl,Southampton,Nott'm Forest,A,3.8,0.2975,14.28,True,39.98,1264.28
+2023-01-12,2022-23,soccer_epl,Fulham,Chelsea,A,2.15,0.483,10.58,False,-10.58,1253.7
+2023-01-15,2022-23,soccer_epl,Chelsea,Crystal Palace,A,5.25,0.2119,8.31,False,-8.31,1245.39
+2023-01-18,2022-23,soccer_epl,Crystal Palace,Man United,A,1.8,0.5839,19.89,False,-19.89,1225.5
+2023-01-21,2022-23,soccer_epl,Leicester,Brighton,A,2.05,0.513,15.07,False,-15.07,1210.43
+2023-02-11,2022-23,soccer_epl,Crystal Palace,Brighton,A,2.0,0.5449,27.19,False,-27.19,1183.24
+2023-02-18,2022-23,soccer_epl,Everton,Leeds,A,3.0,0.3516,8.13,False,-8.13,1175.11
+2023-02-25,2022-23,soccer_epl,Leicester,Arsenal,A,1.7,0.6145,18.73,True,13.11,1188.22
+2023-02-26,2022-23,soccer_epl,Tottenham,Chelsea,A,2.9,0.3908,20.83,False,-20.83,1167.39
+2023-03-05,2022-23,soccer_epl,Nott'm Forest,Everton,A,2.88,0.3742,12.05,False,-12.05,1155.34
+2023-03-12,2022-23,soccer_epl,Fulham,Arsenal,A,1.57,0.675,30.31,True,17.28,1172.62
+2023-03-15,2022-23,soccer_epl,Southampton,Brentford,A,2.5,0.414,6.82,True,10.23,1182.85
+2023-04-08,2022-23,soccer_epl,Wolves,Chelsea,A,1.91,0.5392,9.72,False,-9.72,1173.13
+2023-04-15,2022-23,soccer_epl,Chelsea,Brighton,A,2.63,0.4011,9.86,True,16.07,1189.2
+2023-04-15,2022-23,soccer_epl,Wolves,Brentford,A,3.0,0.3587,11.32,False,-11.32,1177.88
+2023-04-27,2022-23,soccer_epl,Southampton,Bournemouth,A,3.2,0.3354,9.81,True,21.58,1199.46
+2023-05-04,2022-23,soccer_epl,Brighton,Man United,A,3.75,0.307,16.48,False,-16.48,1182.98
+2023-05-20,2022-23,soccer_epl,Wolves,Everton,A,2.6,0.4222,18.05,False,-18.05,1164.93
+2023-05-20,2022-23,soccer_epl,Bournemouth,Man United,A,1.5,0.6818,13.24,True,6.62,1171.55
+2023-05-21,2022-23,soccer_epl,West Ham,Leeds,A,2.88,0.3619,6.6,False,-6.6,1164.95
+2023-08-12,2023-24,soccer_epl,Sheffield United,Crystal Palace,A,2.38,0.4407,10.31,True,14.23,1179.18
+2023-08-13,2023-24,soccer_epl,Chelsea,Liverpool,A,2.38,0.4365,8.32,False,-8.32,1170.86
+2023-08-19,2023-24,soccer_epl,Man City,Newcastle,A,5.0,0.2212,7.76,False,-7.76,1163.1
+2023-10-08,2023-24,soccer_epl,Brighton,Liverpool,A,2.2,0.4698,8.11,False,-8.11,1154.99
+2023-11-04,2023-24,soccer_epl,Sheffield United,Wolves,A,2.0,0.5117,6.74,False,-6.74,1148.25
+2023-11-04,2023-24,soccer_epl,Burnley,Crystal Palace,A,2.6,0.4121,12.83,True,20.53,1168.78
+2023-11-06,2023-24,soccer_epl,Tottenham,Chelsea,A,3.5,0.3261,16.53,True,41.33,1210.11
+2023-11-25,2023-24,soccer_epl,Brentford,Arsenal,A,1.75,0.5841,8.96,True,6.72,1216.83
+2023-11-26,2023-24,soccer_epl,Tottenham,Aston Villa,A,2.8,0.3778,9.76,True,17.57,1234.4
+2023-12-09,2023-24,soccer_epl,Man United,Bournemouth,A,5.75,0.2098,13.4,True,63.65,1298.05
+2023-12-27,2023-24,soccer_epl,Brentford,Wolves,A,4.2,0.2881,21.31,True,68.19,1366.24
+2024-01-02,2023-24,soccer_epl,West Ham,Brighton,A,2.75,0.4277,34.37,False,-34.37,1331.87
+2024-02-12,2023-24,soccer_epl,Crystal Palace,Chelsea,A,1.85,0.5609,14.74,True,12.53,1344.4
+2024-03-10,2023-24,soccer_epl,Liverpool,Man City,A,2.2,0.4668,7.53,False,-7.53,1336.87
+2024-03-30,2023-24,soccer_epl,Brentford,Man United,A,2.2,0.4666,7.37,False,-7.37,1329.5
+2024-04-06,2023-24,soccer_epl,Brighton,Arsenal,A,1.62,0.6316,12.41,True,7.69,1337.19
+2024-04-13,2023-24,soccer_epl,Burnley,Brighton,A,2.0,0.5113,7.55,False,-7.55,1329.64
+2024-04-20,2023-24,soccer_epl,Wolves,Arsenal,A,1.4,0.7609,39.89,True,15.96,1345.6
+2024-04-24,2023-24,soccer_epl,Crystal Palace,Newcastle,A,2.4,0.4309,8.2,False,-8.2,1337.4
+2024-04-27,2023-24,soccer_epl,Everton,Brentford,A,3.0,0.3933,30.05,False,-30.05,1307.35
+2024-05-02,2023-24,soccer_epl,Chelsea,Tottenham,A,3.0,0.3659,15.94,False,-15.94,1291.41
+2024-05-11,2023-24,soccer_epl,Wolves,Crystal Palace,A,2.38,0.4318,6.46,True,8.91,1300.32
+2024-05-11,2023-24,soccer_epl,Nott'm Forest,Chelsea,A,2.0,0.5195,12.67,True,12.67,1312.99
+2024-05-19,2023-24,soccer_epl,Brighton,Man United,A,2.9,0.3983,26.81,True,50.94,1363.93
+2024-08-17,2024-25,soccer_epl,Everton,Brighton,A,2.63,0.4135,18.3,True,29.83,1393.76
+2024-08-18,2024-25,soccer_epl,Brentford,Crystal Palace,A,2.9,0.3728,14.88,False,-14.88,1378.88
+2024-09-21,2024-25,soccer_epl,Southampton,Ipswich,A,3.2,0.3308,9.2,False,-9.2,1369.68
+2024-10-05,2024-25,soccer_epl,Leicester,Bournemouth,A,2.15,0.4798,9.39,False,-9.39,1360.29
+2024-10-05,2024-25,soccer_epl,Everton,Newcastle,A,2.2,0.4868,20.14,False,-20.14,1340.15
+2024-10-20,2024-25,soccer_epl,Liverpool,Chelsea,A,5.0,0.223,9.62,False,-9.62,1330.53
+2024-10-27,2024-25,soccer_epl,West Ham,Man United,A,2.3,0.4553,12.07,False,-12.07,1318.46
+2024-11-09,2024-25,soccer_epl,Crystal Palace,Fulham,A,2.55,0.4212,15.75,True,24.41,1342.87
+2024-12-01,2024-25,soccer_epl,Tottenham,Fulham,A,4.1,0.2875,19.37,False,-19.37,1323.5
+2024-12-05,2024-25,soccer_epl,Fulham,Brighton,A,2.88,0.3647,8.87,False,-8.87,1314.63
+2024-12-22,2024-25,soccer_epl,Leicester,Wolves,A,2.7,0.3967,13.75,True,23.38,1338.01
+2024-12-22,2024-25,soccer_epl,Tottenham,Liverpool,A,1.73,0.5909,10.18,True,7.43,1345.44
+2024-12-26,2024-25,soccer_epl,Bournemouth,Crystal Palace,A,3.8,0.2806,7.97,False,-7.97,1337.47
+2024-12-29,2024-25,soccer_epl,Leicester,Man City,A,1.36,0.748,16.06,True,5.78,1343.25
+2025-01-04,2024-25,soccer_epl,Tottenham,Newcastle,A,2.25,0.547,40.3,True,50.38,1393.63
+2025-01-04,2024-25,soccer_epl,Southampton,Brentford,A,2.4,0.4485,19.03,True,26.64,1420.27
+2025-01-06,2024-25,soccer_epl,Wolves,Nott'm Forest,A,2.3,0.4861,32.24,True,41.91,1462.18
+2025-01-25,2024-25,soccer_epl,Man City,Chelsea,A,3.3,0.3491,24.18,False,-24.18,1438.0
+2025-02-26,2024-25,soccer_epl,Tottenham,Man City,A,2.0,0.5257,18.47,True,18.47,1456.47
+2025-03-15,2024-25,soccer_epl,Man City,Brighton,A,4.5,0.2428,9.65,False,-9.65,1446.82
+2025-04-20,2024-25,soccer_epl,Man United,Wolves,A,3.6,0.3533,37.84,True,98.38,1545.2
+2025-04-27,2024-25,soccer_epl,Bournemouth,Man United,A,4.5,0.2557,16.63,False,-16.63,1528.57
+2025-05-10,2024-25,soccer_epl,Ipswich,Brentford,A,1.65,0.6273,20.58,True,13.38,1541.95
+2025-05-11,2024-25,soccer_epl,Man United,West Ham,A,4.0,0.2706,10.57,True,31.71,1573.66
+2025-05-11,2024-25,soccer_epl,Tottenham,Crystal Palace,A,2.5,0.4309,20.25,True,30.38,1604.04
+2025-05-11,2024-25,soccer_epl,Liverpool,Arsenal,A,3.6,0.3058,15.55,False,-15.55,1588.49
+2025-05-25,2024-25,soccer_epl,Nott'm Forest,Chelsea,A,2.2,0.4713,12.23,True,14.68,1603.17
