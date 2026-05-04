@@ -40,6 +40,46 @@ from signals.telegram_alert import send_signal_alert   # Phase 3
 
 import requests
 
+# ── Drawdown Guard (Phase 2+) ─────────────────────────────────────
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
+from drawdown_guard import BankrollState
+
+# Singleton state — tồn tại suốt vòng đời process (live trading session)
+# Khi restart process, state reset về initial_bankroll
+# TODO: persist state vào DB để survive restart
+_guard_state: BankrollState | None = None
+
+def get_guard_state(session) -> BankrollState:
+    """
+    Lấy hoặc khởi tạo BankrollState từ DB history.
+    Reconstruct state từ settled bets để survive process restart.
+    """
+    global _guard_state
+    if _guard_state is not None:
+        return _guard_state
+
+    # Tính bankroll thực tế từ settled bets
+    settled = (
+        session.query(LiveBet)
+        .filter_by(settled=True)
+        .order_by(LiveBet.id)
+        .all()
+    )
+
+    state = BankrollState(initial=INITIAL_BANKROLL)
+
+    # Replay history để reconstruct peak, streak, drawdown
+    for bet in settled:
+        if bet.won is not None and bet.profit is not None:
+            state.update(won=bet.won, profit=bet.profit)
+
+    _guard_state = state
+    logger.info(
+        f"[Guard] State loaded: {state.status_str()} "
+        f"(replayed {len(settled)} settled bets)"
+    )
+    return _guard_state
+
 logger.add(
     LOGS_DIR / "odds_poller.log",
     rotation="10 MB",
@@ -283,21 +323,26 @@ def run_poll_cycle(dry_run: bool = False) -> list[dict]:
                     logger.debug(f"[Poller] {match_key} — signal exists, skip")
                     continue
 
-                # 5. Tính Kelly stake
+                # 5. Tính Kelly stake QUA Drawdown Guard
                 side = mv["signal_side"]
                 prob_map = {"H": mv["curr_prob_h"], "D": mv["curr_prob_d"], "A": mv["curr_prob_a"]}
                 odds_map = {"H": current_snap.odds_h, "D": current_snap.odds_d, "A": current_snap.odds_a}
                 curr_prob = prob_map[side]
                 curr_odds = odds_map[side]
 
-                bankroll = get_current_bankroll(session)
-                stake = kelly_live_stake(curr_prob, curr_odds, bankroll)
+                guard = get_guard_state(session)
+                stake, guard_debug = guard.kelly_stake(curr_prob, curr_odds)
 
                 if stake <= 0:
-                    logger.info(f"[Poller] {match_key} — signal {side} Kelly=0, skip")
+                    reason = "paused" if guard.paused else ("emergency_stop" if guard.emergency_stopped else "kelly_too_small")
+                    logger.info(
+                        f"[Poller] {match_key} — signal {side} | "
+                        f"Guard skipped: {reason} | DD={guard_debug['drawdown']:.1f}% | streak={guard_debug['loss_streak']}"
+                    )
                     continue
 
                 # 6. Log LiveBet
+                bankroll = guard.current
                 signal_info = {
                     "match_key":    match_key,
                     "league":       event["league"],

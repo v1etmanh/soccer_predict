@@ -32,6 +32,24 @@ from config import (
 from data.database import get_session, LiveBet, Match, OddsSnapshot
 from signals.telegram_alert import send_result_alert, send_daily_summary
 
+# ── Drawdown Guard: update state sau mỗi settle ──────────────────
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
+from drawdown_guard import BankrollState
+
+def _get_guard_for_settler(session) -> BankrollState:
+    """Reconstruct guard state từ toàn bộ settled history."""
+    settled = (
+        session.query(LiveBet)
+        .filter_by(settled=True)
+        .order_by(LiveBet.id)
+        .all()
+    )
+    state = BankrollState(initial=INITIAL_BANKROLL)
+    for bet in settled:
+        if bet.won is not None and bet.profit is not None:
+            state.update(won=bet.won, profit=bet.profit)
+    return state
+
 logger.add(
     LOGS_DIR / "bet_settler.log",
     rotation="5 MB",
@@ -181,6 +199,10 @@ def run_settlement(dry_run: bool = False) -> dict:
 
         logger.info(f"[Settler] Found {len(pending)} pending bets to settle.")
 
+        # Reconstruct guard state từ history trước khi settle batch này
+        guard = _get_guard_for_settler(session)
+        logger.info(f"[Settler] Guard state: {guard.status_str()}")
+
         for bet in pending:
             match_info = find_match_result(session, bet)
 
@@ -204,6 +226,9 @@ def run_settlement(dry_run: bool = False) -> dict:
             if success:
                 settled_count += 1
                 total_profit += bet.profit or 0
+                # Cập nhật guard state sau mỗi bet settle
+                guard.update(won=bet.won, profit=bet.profit or 0)
+                logger.debug(f"[Settler] Guard updated: {guard.status_str()}")
 
     except Exception as e:
         logger.error(f"[Settler] Error during settlement: {e}", exc_info=True)

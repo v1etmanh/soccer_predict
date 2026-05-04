@@ -1,0 +1,37 @@
+2026-05-04 12:02:23.637 | INFO     | __main__:<module>:40 - [Main] Starting poller | Mode: PAPER | Interval: 60m
+2026-05-04 12:02:27.675 | INFO     | signals.odds_poller:run_poll_cycle:226 - [Poller] Polling soccer_epl...
+2026-05-04 12:02:29.175 | INFO     | signals.live_signals:fetch_live_odds:57 - [LiveSignals] Fetched 20 events for soccer_epl
+2026-05-04 12:02:29.197 | INFO     | signals.odds_poller:run_poll_cycle:253 - [Poller] New baseline: Chelsea vs Nottingham Forest H:1.71 D:4.0 A:4.775
+2026-05-04 12:02:29.198 | INFO     | signals.odds_poller:run_poll_cycle:253 - [Poller] New baseline: Everton vs Manchester City H:6.345 D:4.755 A:1.475
+2026-05-04 12:02:29.198 | INFO     | signals.odds_poller:run_poll_cycle:253 - [Poller] New baseline: Liverpool vs Chelsea H:1.915 D:3.85 A:3.72
+2026-05-04 12:02:29.198 | INFO     | signals.odds_poller:run_poll_cycle:253 - [Poller] New baseline: Fulham vs Bournemouth H:2.7 D:3.675 A:2.465
+2026-05-04 12:02:29.198 | INFO     | signals.odds_poller:run_poll_cycle:253 - [Poller] New baseline: Brighton and Hove Albion vs Wolverhampton Wanderers H:1.32 D:5.6 A:8.86
+2026-05-04 12:02:29.198 | INFO     | signals.odds_poller:run_poll_cycle:253 - [Poller] New baseline: Sunderland vs Manchester United H:4.0 D:3.775 A:1.875
+2026-05-04 12:02:29.202 | INFO     | signals.odds_poller:run_poll_cycle:253 - [Poller] New baseline: Manchester City vs Brentford H:1.335 D:5.725 A:8.05
+2026-05-04 12:02:29.202 | INFO     | signals.odds_poller:run_poll_cycle:253 - [Poller] New baseline: Burnley vs Aston Villa H:5.3 D:4.2 A:1.6
+2026-05-04 12:02:29.202 | INFO     | signals.odds_poller:run_poll_cycle:253 - [Poller] New baseline: Crystal Palace vs Everton H:2.75 D:3.25 A:2.62
+2026-05-04 12:02:29.202 | INFO     | signals.odds_poller:run_poll_cycle:253 - [Poller] New baseline: Nottingham Forest vs Newcastle United H:2.47 D:3.46 A:2.8
+2026-05-04 12:02:29.202 | INFO     | signals.odds_poller:run_poll_cycle:253 - [Poller] New baseline: West Ham United vs Arsenal H:5.2 D:4.175 A:1.62
+2026-05-04 12:02:29.205 | INFO     | signals.odds_poller:run_poll_cycle:356 - [Poller] Cycle done. Fired 0 signals.
+2026-05-04 12:02:29.205 | INFO     | __main__:<module>:50 - [Main] Done. Fired 0 signals.
+2026-05-04 12:02:53.684 | INFO     | __main__:<module>:40 - [Main] Starting poller | Mode: PAPER | Interval: 60m
+2026-05-04 12:02:54.470 | INFO     | signals.odds_poller:run_poll_cycle:226 - [Poller] Polling soccer_epl...
+2026-05-04 12:02:55.635 | INFO     | signals.live_signals:fetch_live_odds:57 - [LiveSignals] Fetched 20 events for soccer_epl
+2026-05-04 12:02:55.665 | INFO     | signals.odds_poller:run_poll_cycle:253 - [Poller] New baseline: Chelsea vs Nottingham Forest H:1.71 D:4.0 A:4.775
+2026-05-04 12:02:55.672 | INFO     | signals.odds_poller:run_poll_cycle:253 - [Poller] New baseline: Everton vs Manchester City H:6.345 D:4.755 A:1.475
+2026-05-04 12:02:55.676 | INFO     | signals.odds_poller:run_poll_cycle:253 - [Poller] New baseline: Liverpool vs Chelsea H:1.915 D:3.85 A:3.72
+2026-05-04 12:02:55.682 | INFO     | signals.odds_poller:run_poll_cycle:253 - [Poller] New baseline: Fulham vs Bournemouth H:2.7 D:3.675 A:2.465
+2026-05-04 12:02:55.688 | INFO     | signals.odds_poller:run_poll_cycle:253 - [Poller] New baseline: Brighton and Hove Albion vs Wolverhampton Wanderers H:1.32 D:5.6 A:8.86
+2026-05-04 12:02:55.692 | INFO     | signals.odds_poller:run_poll_cycle:253 - [Poller] New baseline: Sunderland vs Manchester United H:4.0 D:3.775 A:1.875
+2026-05-04 12:02:55.700 | INFO     | signals.odds_poller:run_poll_cycle:253 - [Poller] New baseline: Manchester City vs Brentford H:1.335 D:5.725 A:8.05
+2026-05-04 12:02:55.708 | INFO     | signals.odds_poller:run_poll_cycle:253 - [Poller] New baseline: Burnley vs Aston Villa H:5.3 D:4.2 A:1.6
+2026-05-04 12:02:55.715 | INFO     | signals.odds_poller:run_poll_cycle:253 - [Poller] New baseline: Crystal Palace vs Everton H:2.75 D:3.25 A:2.62
+2026-05-04 12:02:55.721 | INFO     | signals.odds_poller:run_poll_cycle:253 - [Poller] New baseline: Nottingham Forest vs Newcastle United H:2.47 D:3.46 A:2.8
+2026-05-04 12:02:55.725 | INFO     | signals.odds_poller:run_poll_cycle:253 - [Poller] New baseline: West Ham United vs Arsenal H:5.2 D:4.175 A:1.62
+2026-05-04 12:02:55.725 | INFO     | signals.odds_poller:run_poll_cycle:356 - [Poller] Cycle done. Fired 0 signals.
+2026-05-04 12:02:55.728 | INFO     | __main__:<module>:50 - [Main] Done. Fired 0 signals.
+2026-05-04 12:05:08.351 | INFO     | __main__:<module>:40 - [Main] Starting poller | Mode: PAPER | Interval: 60m
+2026-05-04 12:05:09.670 | INFO     | signals.odds_poller:run_poll_cycle:266 - [Poller] Polling soccer_epl...
+2026-05-04 12:05:10.751 | INFO     | signals.live_signals:fetch_live_odds:57 - [LiveSignals] Fetched 20 events for soccer_epl
+2026-05-04 12:05:10.809 | INFO     | signals.odds_poller:run_poll_cycle:401 - [Poller] Cycle done. Fired 0 signals.
+2026-05-04 12:05:10.810 | INFO     | __main__:<module>:50 - [Main] Done. Fired 0 signals.
